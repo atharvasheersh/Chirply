@@ -1,0 +1,17 @@
+{
+  "name": "chirply-vercel-mongodb",
+  "version": "1.0.0",
+  "description": "Chirply deployment-ready version for Vercel + MongoDB Atlas + Vercel Blob",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@vercel/blob": "^1.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "mongodb": "^6.16.0",
+    "multer": "^2.0.0"
+  }
+}

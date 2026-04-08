@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post Details | Chirply</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="light" data-page="post">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">Chirp<span>ly</span></div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="feed.html">Feed</a>
+        <a href="create.html">Write</a>
+        <a href="explore.html">Explore</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div class="top-actions">
+        <a class="pill-btn" href="login.html">Login</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="layout-two">
+        <article class="post-detail" id="postDetailRoot">
+          <a href="feed.html" class="back-link">← Back to Feed</a>
+          <div id="postDetailContent">
+            <p class="muted">Loading post...</p>
+          </div>
+
+          <section class="comments">
+            <h3>Comments</h3>
+            <form id="commentForm">
+              <textarea id="commentInput" rows="3" placeholder="Write a comment..."></textarea>
+              <button type="submit" class="pill-btn solid">Add Comment</button>
+            </form>
+            <div id="commentList" class="stack"></div>
+          </section>
+        </article>
+
+        <aside class="side-panel">
+          <div class="panel-card">
+            <h3>Related Posts</h3>
+            <ul class="clean-list linked-list" id="relatedPosts"></ul>
+          </div>
+          <div class="panel-card">
+            <h3>Page Purpose</h3>
+            <p class="muted small">Single-post view with working reactions and comments connected to the backend.</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Chirply</p>
+    </footer>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

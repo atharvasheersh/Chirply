@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feed | Chirply</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="light" data-page="feed">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">Chirp<span>ly</span></div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="feed.html">Feed</a>
+        <a href="create.html">Write</a>
+        <a href="explore.html">Explore</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div class="top-actions">
+        <a class="pill-btn" href="login.html">Login</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page-head">
+        <div>
+          <h1>Home Feed</h1>
+          <p class="muted">Discover short blogs from your network and trending topics.</p>
+        </div>
+        <a class="pill-btn solid" href="create.html">+ New Post</a>
+      </section>
+
+      <section class="layout-two">
+        <div>
+          <div class="toolbar">
+            <input id="feedSearch" type="search" placeholder="Search posts by title, tag, or author..." />
+            <select id="feedSort">
+              <option value="recent">Sort: Recent</option>
+              <option value="popular">Sort: Popular</option>
+            </select>
+          </div>
+
+          <div id="feedList" class="stack"></div>
+          <p id="feedEmpty" class="muted hidden">No posts matched your search. Try a different keyword.</p>
+        </div>
+
+        <aside class="side-panel">
+          <div class="panel-card">
+            <h3>Trending Tags</h3>
+            <div class="chips" id="trendingChips"></div>
+            <p class="muted small">Click a tag to auto-fill search.</p>
+          </div>
+          <div class="panel-card">
+            <h3>Features</h3>
+            <ul class="clean-list">
+              <li>Persistent reactions and comments</li>
+              <li>Real post creation with media upload</li>
+              <li>Feed search and sort</li>
+              <li>Profile posts, drafts, and liked posts</li>
+              <li>Responsive multi-page interface</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Chirply</p>
+    </footer>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

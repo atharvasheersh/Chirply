@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Chirply</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="light" data-page="login">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">Chirp<span>ly</span></div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="feed.html">Feed</a>
+        <a href="create.html">Write</a>
+        <a href="explore.html">Explore</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div class="top-actions">
+        <a class="pill-btn" href="login.html">Login</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="center-wrap narrow">
+        <div class="form-card">
+          <h2>Login</h2>
+          <p class="muted">Sign in to continue to your feed.</p>
+          <form id="loginForm" novalidate>
+            <label>Email or Username
+              <input type="text" id="loginEmail" placeholder="you@example.com" required />
+            </label>
+            <label>Password
+              <input type="password" id="loginPassword" placeholder="Enter password" minlength="6" required />
+            </label>
+            <div id="loginErrors" class="error-box hidden"></div>
+            <button type="submit" class="pill-btn solid full">Login</button>
+          </form>
+          <p class="muted small center">Demo account: WebProject / PRP232</p>
+          <p class="center small">New user? <a href="signup.html">Create an account</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Chirply</p>
+    </footer>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

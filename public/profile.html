@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | Chirply</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="light" data-page="profile">
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">Chirp<span>ly</span></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="feed.html">Feed</a>
+        <a href="create.html">Write</a>
+        <a href="explore.html">Explore</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div class="top-actions">
+        <a class="pill-btn" href="login.html">Login</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page-head profile-hero">
+        <div class="row gap">
+          <div class="avatar lg" id="profileAvatar">ME</div>
+          <div>
+            <h1 id="profileName">Your Profile</h1>
+            <p class="muted" id="profileMeta">Login to see your account details.</p>
+          </div>
+        </div>
+        <a class="pill-btn" href="create.html">Write a Post</a>
+      </section>
+
+      <section class="grid-3 cards-section profile-stats">
+        <div class="stat-card"><strong id="statPosts">0</strong><span>Posts</span></div>
+        <div class="stat-card"><strong id="statReactions">0</strong><span>Total Reactions</span></div>
+        <div class="stat-card"><strong id="statDrafts">0</strong><span>Saved Drafts</span></div>
+      </section>
+
+      <section class="panel-card">
+        <div class="row gap wrap">
+          <button class="tab-btn active" data-tab="published">Published</button>
+          <button class="tab-btn" data-tab="drafts">Drafts</button>
+          <button class="tab-btn" data-tab="liked">Liked</button>
+        </div>
+
+        <div class="tab-content active" id="tab-published">
+          <div class="stack" id="publishedList"></div>
+        </div>
+
+        <div class="tab-content" id="tab-drafts">
+          <div class="stack" id="draftList"></div>
+        </div>
+
+        <div class="tab-content" id="tab-liked">
+          <div class="stack" id="likedList"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Chirply</p>
+    </footer>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

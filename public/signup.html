@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup | Chirply</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="light" data-page="signup">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">Chirp<span>ly</span></div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="feed.html">Feed</a>
+        <a href="create.html">Write</a>
+        <a href="explore.html">Explore</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div class="top-actions">
+        <a class="pill-btn" href="login.html">Login</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="center-wrap narrow">
+        <div class="form-card">
+          <h2>Create account</h2>
+          <p class="muted">Join and start posting short blogs.</p>
+          <form id="signupForm" novalidate>
+            <label>Full Name
+              <input type="text" id="name" placeholder="Your name" required />
+            </label>
+            <label>Email
+              <input type="email" id="email" placeholder="you@example.com" required />
+            </label>
+            <label>Username
+              <input type="text" id="username" placeholder="User" required />
+            </label>
+            <label>Password
+              <input type="password" id="password" minlength="6" placeholder="Minimum 6 characters" required />
+            </label>
+            <label>Confirm Password
+              <input type="password" id="confirmPassword" minlength="6" placeholder="Repeat password" required />
+            </label>
+            <div id="signupErrors" class="error-box hidden"></div>
+            <button type="submit" class="pill-btn solid full">Create Account</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Chirply</p>
+    </footer>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

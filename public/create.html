@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Post | Chirply</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="light" data-page="create">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">Chirp<span>ly</span></div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="feed.html">Feed</a>
+        <a href="create.html">Write</a>
+        <a href="explore.html">Explore</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div class="top-actions">
+        <a class="pill-btn" href="login.html">Login</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page-head">
+        <div>
+          <h1>Create a Post</h1>
+          <p class="muted">Compose a short blog with optional one image or one video.</p>
+        </div>
+        <button type="button" class="pill-btn" id="loadDraftBtn">Load Draft</button>
+      </section>
+
+      <section class="layout-two">
+        <div class="form-card">
+          <form id="composeForm" novalidate>
+            <label>Title
+              <input id="postTitle" type="text" maxlength="120" placeholder="Write a clear title" required />
+            </label>
+            <label>Tags (comma separated)
+              <input id="postTags" type="text" placeholder="webdev, students, ui" />
+            </label>
+            <label>Content
+              <textarea id="postContent" rows="12" maxlength="7000" placeholder="Write your short blog here..."></textarea>
+            </label>
+            <label>Attach Media (Optional)
+              <input id="postMedia" type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm" />
+              <p class="muted small helper-text">Upload 1 image OR 1 video (JPG/PNG/WEBP/MP4/WEBM) • Max 10 MB</p>
+            </label>
+            <div id="mediaInfoBox" class="media-upload-box hidden">
+              <div class="row between wrap gap">
+                <div>
+                  <p id="mediaFileName" class="media-file-name">No file selected</p>
+                  <p id="mediaFileMeta" class="muted small media-file-meta"></p>
+                </div>
+                <button type="button" class="pill-btn" id="removeMediaBtn">Remove Media</button>
+              </div>
+            </div>
+            <div class="row between">
+              <p class="muted small">Words: <span id="wordCount">0</span> / 1000</p>
+              <p class="muted small">Characters: <span id="charCount">0</span></p>
+            </div>
+            <div id="composeErrors" class="error-box hidden"></div>
+            <div class="row gap wrap">
+              <button type="button" class="pill-btn" id="saveDraftBtn">Save Draft</button>
+              <button type="submit" class="pill-btn solid">Publish Post</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="side-panel">
+          <div class="panel-card">
+            <h3>Live Preview</h3>
+            <article class="post-card">
+              <div class="row gap">
+                <div class="avatar">ME</div>
+                <div>
+                  <h4 id="previewAuthor">Your account</h4>
+                  <p class="muted"><span id="previewReadTime">1</span> min read • <span id="previewTags">#General</span></p>
+                </div>
+              </div>
+              <h3 id="previewTitle">Your title will appear here</h3>
+              <p class="muted" id="previewContent">Start typing to see a preview of your content...</p>
+              <div id="previewMediaWrap" class="media-preview-wrap hidden">
+                <div class="row between wrap gap">
+                  <span id="previewMediaBadge" class="chip media-badge">No Media</span>
+                  <span id="previewMediaName" class="muted small"></span>
+                </div>
+                <div id="previewMediaFrame" class="post-media preview-surface">
+                  <p class="muted small center">Media preview will appear here</p>
+                </div>
+              </div>
+              <div class="reactions">
+                <button class="reaction-btn" disabled>😊 <span>0</span></button>
+                <button class="reaction-btn" disabled>❤️ <span>0</span></button>
+                <button class="reaction-btn" disabled>😂 <span>0</span></button>
+              </div>
+            </article>
+          </div>
+          <div class="panel-card">
+            <h3>Submission Notes</h3>
+            <ul class="clean-list">
+              <li>Keep content under 1000 words</li>
+              <li>Use tags for discoverability</li>
+              <li>Drafts are saved on the backend</li>
+              <li>Single media upload is supported</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Chirply</p>
+    </footer>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

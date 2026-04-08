@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chirply | Home</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    .hero-home {
+      align-items: flex-start;
+      gap: 0;
+      min-height: auto;
+      padding: 34px 0 12px;
+      margin-bottom: 34px;
+    }
+
+    .hero-copy {
+      flex: none;
+      width: min(100%, 760px);
+      max-width: 760px;
+    }
+
+    .hero-copy .big {
+      line-height: 1.8;
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      margin-bottom: 18px;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .hero-points .chip {
+      cursor: default;
+      box-shadow: none;
+      background: rgba(248, 251, 255, 0.72);
+      border-color: rgba(255, 255, 255, 0.48);
+    }
+
+    .hero-points .chip:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .home-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .feature-panel {
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      padding: 22px;
+      border-radius: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      background: linear-gradient(180deg, rgba(248,251,255,0.88) 0%, rgba(240,246,252,0.78) 100%);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 16px;
+      align-content: space-between;
+    }
+
+    .feature-panel::before {
+      content: "";
+      position: absolute;
+      inset: auto -44px -64px auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(48, 82, 130, 0.08);
+      pointer-events: none;
+    }
+
+    .feature-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(180deg, rgba(48,82,130,0.18) 0%, rgba(48,82,130,0.08) 100%);
+      color: #223f67;
+      border: 1px solid rgba(48, 82, 130, 0.14);
+    }
+
+    .feature-kicker {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: #36598a;
+      background: rgba(48, 82, 130, 0.08);
+      border: 1px solid rgba(48, 82, 130, 0.12);
+    }
+
+    .feature-panel h3,
+    .feature-panel p {
+      margin: 0;
+    }
+
+    .feature-panel h3 {
+      font-size: 1.6rem;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: #11233a;
+    }
+
+    .feature-panel p {
+      color: #486075;
+      line-height: 1.65;
+      max-width: 34ch;
+    }
+
+    .feature-art {
+      position: relative;
+      min-height: 118px;
+      border-radius: 20px;
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(235,242,249,0.86) 100%);
+      border: 1px solid rgba(48, 82, 130, 0.1);
+    }
+
+    .feature-art.write-art::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 30px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(48,82,130,0.2) 0%, rgba(48,82,130,0.08) 100%);
+      box-shadow: 0 24px 0 rgba(48,82,130,0.12), 0 48px 0 rgba(48,82,130,0.08);
+    }
+
+    .write-meter {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      padding: 8px 10px;
+      border-radius: 14px;
+      background: #305282;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 12px 22px rgba(48, 82, 130, 0.22);
+    }
+
+    .react-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .react-badges span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: rgba(48, 82, 130, 0.12);
+      color: #223f67;
+      font-size: 1.35rem;
+      border: 1px solid rgba(48, 82, 130, 0.12);
+    }
+
+    .react-note {
+      margin-top: 12px;
+      color: #4b6384;
+      font-weight: 600;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .tag-cloud span {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(48, 82, 130, 0.1);
+      color: #27415f;
+      border: 1px solid rgba(48, 82, 130, 0.12);
+      font-weight: 600;
+    }
+
+    .feature-foot {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #36598a;
+      font-weight: 700;
+    }
+
+    .home-cta {
+      margin-top: 18px;
+      padding: 28px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      background: linear-gradient(180deg, rgba(248,251,255,0.86) 0%, rgba(238,245,251,0.78) 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .home-cta h2,
+    .home-cta p {
+      margin: 0;
+    }
+
+    .home-cta .row {
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-home {
+        padding-top: 24px;
+      }
+
+      .home-feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="light" data-page="landing">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">Chirp<span>ly</span></div>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="feed.html">Feed</a>
+        <a href="create.html">Write</a>
+        <a href="explore.html">Explore</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div class="top-actions">
+        <a class="pill-btn" href="login.html">Login</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero hero-home">
+        <div class="hero-copy">
+          <p class="eyebrow">Chirply</p>
+          <h1>Write short. Share smarter.</h1>
+          <p class="muted big">
+            Chirply is a clean, modern space for short blogs, quick reactions, and lightweight discovery.
+            Publish concise thoughts, add a photo or video, and browse ideas without the clutter of a noisy feed.
+          </p>
+
+          <div class="hero-actions">
+            <a class="pill-btn solid" href="feed.html">Open Feed</a>
+            <a class="pill-btn" href="create.html">Write a Post</a>
+            <a class="pill-btn ghost" href="signup.html">Create Account</a>
+          </div>
+
+          <div class="hero-points">
+            <span class="chip">Short-form publishing</span>
+            <span class="chip">3 instant reactions</span>
+            <span class="chip">Image or video support</span>
+            <span class="chip">Simple topic discovery</span>
+          </div>
+
+          <div class="hero-stats" style="margin-top: 24px;">
+            <div class="stat">
+              <strong>1000</strong>
+              <span>Max words per post</span>
+            </div>
+            <div class="stat">
+              <strong>3</strong>
+              <span>Reaction types</span>
+            </div>
+            <div class="stat">
+              <strong>1</strong>
+              <span>Media attachment</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-feature-grid">
+        <article class="feature-panel">
+          <div class="feature-top">
+            <span class="feature-icon">✍️</span>
+            <span class="feature-kicker">Write</span>
+          </div>
+          <div class="stack" style="gap: 10px;">
+            <h3>Write with clarity</h3>
+            <p>
+              Draft crisp posts with a practical word limit that encourages thoughtful, concise communication.
+            </p>
+          </div>
+          <div class="feature-art write-art">
+            <span class="write-meter">1000 words max</span>
+          </div>
+          <span class="feature-foot">Focused drafting →</span>
+        </article>
+
+        <article class="feature-panel">
+          <div class="feature-top">
+            <span class="feature-icon">💬</span>
+            <span class="feature-kicker">React</span>
+          </div>
+          <div class="stack" style="gap: 10px;">
+            <h3>React without noise</h3>
+            <p>
+              Keep engagement lightweight with simple emotional reactions instead of cluttered interaction patterns.
+            </p>
+          </div>
+          <div class="feature-art">
+            <div class="react-badges">
+              <span>😊</span>
+              <span>❤️</span>
+              <span>😂</span>
+            </div>
+            <div class="react-note">Fast feedback, no clutter.</div>
+          </div>
+          <span class="feature-foot">Lightweight interaction →</span>
+        </article>
+
+        <article class="feature-panel">
+          <div class="feature-top">
+            <span class="feature-icon">#</span>
+            <span class="feature-kicker">Discover</span>
+          </div>
+          <div class="stack" style="gap: 10px;">
+            <h3>Browse by interest</h3>
+            <p>
+              Use tags and the feed to discover ideas quickly across topics that matter to you.
+            </p>
+          </div>
+          <div class="feature-art">
+            <div class="tag-cloud">
+              <span>#study</span>
+              <span>#dogs</span>
+              <span>#reflection</span>
+              <span>#care</span>
+              <span>#students</span>
+            </div>
+          </div>
+          <span class="feature-foot">Tag-led discovery →</span>
+        </article>
+      </section>
+
+      <section class="home-cta">
+        <div class="row">
+          <div class="stack" style="gap: 8px;">
+            <h2>Ready to start posting?</h2>
+            <p class="muted">Create an account, publish your first short post, and explore the Chirply feed.</p>
+          </div>
+          <div class="hero-actions" style="margin: 0;">
+            <a class="pill-btn solid" href="signup.html">Get Started</a>
+            <a class="pill-btn" href="login.html">Login</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Chirply</p>
+    </footer>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
